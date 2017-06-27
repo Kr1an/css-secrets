@@ -149,10 +149,202 @@
             animation: ants 12s linear infinite;
         }
         @keyframes ants { to { background-position: 100% } }
+        .ellipse {
+            border-radius: 50%/20% 40px;
+            height: 600px;
+        }
+        .half-ellipse {
+            /*border-radius: 50%/100% 100% 0 0*/
+            /*border-radius: 50%;*/
+            border-radius: 50% / 100% 100% 0% 0%
+        }
+        .quad-ellipse {
+            border-top-left-radius: 100%;
+        }
+        .bord-min {
+            width: 0px;
+            height: 0px;
+            /*border: 30px solid hsla(20, 100%, 50%, 0.3);
+            */
+            background-clip:padding-box;
+border-top: 210px solid #77c;
+border-left: 110px solid transparent;
+border-right: 110px solid transparent;
+            background: url(flickr.com/kurmanphotos/7847424816);
+            /*border-top: 30px solid red;
+            border-left: 40px solid green;
+            border-top: none;*/
+            /*background: transparent;*/
+            /*background-clip:content-box*/
+        }
+        .parall:before {
+            content: '';
+            position: absolute;
+            transform: skewX(45deg);
+            background-color: #58a;
+            top: 0; bottom: 0; left: 0; right: 0;
+            z-index: -1;
+            border-radius: 8px;
+            background-image: url(https://pp.userapi.com/c636921/v636921977/1be5a/mlQr2VNQRxE.jpg);            
+        }
+        .parall {
+            width: 190px;
+            height: 50px;
+            font-family:sans-serif;
+            text-decoration: underline;
+            font-weight: bold;
+            color: white;
+            font-size: 25px;
+            letter-spacing: 0px;
+            word-spacing: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            background: none;
+            position: relative;
+            margin-left: 90px;
+            
+        }
+
+        .diamond-pict img {
+            clip-path: polygon(0px 50%, 50% 40px,
+            100% 50%, 50% calc(100% - 40px));
+            transition: 0.5s clip-path;
+
+        }
+        .diamond-pict img:hover {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .cutting-edge {
+           background: #58a;
+        background:
+            linear-gradient(-45deg, transparent 15px, #58a 0)
+            right,
+            linear-gradient(45deg, transparent 15px, #655 0)
+            left;
+        background-size: 50% 100%;
+        background-repeat: no-repeat;
+        }
+        .pie {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: yellowgreen;
+            background-image:
+            linear-gradient(to right, transparent 50%, #655 0);
+            color: transparent;
+            text-align: center;
+        }
+        .pie:before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            width: 50%; height: 100%;
+            border-radius: 0 100% 100% 0 / 50%;
+            background-color: inherit;
+            transform-origin: left;
+            animation: spin 5s linear infinite,
+            bg 10s step-end infinite;
+            animation-play-state:running;
+            animation-delay: inherit;
+            /*animation-fill-mode: forwards;*/
+            /*animation-delay: -0s!important;*/
+            animation-play-state: paused;
+
+        }
+        @keyframes spin {
+            to { transform: rotate(.5turn); }
+        }
+        @keyframes bg {
+            50% { background: #655; }
+        }
+        .svg-pie {
+
+            
+        }
+        .svg-pie svg {
+            border-radius: 100%;
+            transform: rotate(-90deg);
+
+        }
+        .cir1 {
+            fill: yellowgreen;
+            stroke: #655;
+            stroke-width: 100;
+            stroke-dasharray: 100 400;
+            /*stroke-dasharray: 100% 300;*/
+            animation: fillup 5s ease-out;
+            stroke-dashoffset: 20;
+        }
+        .cir2 {
+            fill: transparent;
+            stroke: brown;
+            stroke-width: 100;
+            stroke-dasharray: 50 400;
+            /*stroke-dasharray: 100% 300;*/
+            animation: fillup 5s ease-out;
+            stroke-dashoffset: 30;
+            
+        }
+        @keyframes fillup {
+            from { stroke-dasharray: 0 400}
+            
+        }
 
     </style>
 </head>
 <body>
+    <div class="ex bg-img">
+        <div class="svg-pie">
+            <svg width=100px height=100px>
+                <circle class="cir1" r="50" cx="50" cy="50" />
+                <circle class="cir2" r="50" cx="50" cy="50" />
+            </svg>
+        </div>
+    </div>
+    <div class="ex bg-img" >
+        <div class="rect pie" style="animation-delay: -4s">
+            
+        </div>
+    </div>
+    <div class="ex bg-img">
+        <div class="rect cutting-edge">
+            
+        </div>
+    </div>
+    <div class="ex bg-img">
+        <div class="rect diamond-pict">
+            <img height=200px width=inherit src="https://pp.userapi.com/c636921/v636921977/1be5a/mlQr2VNQRxE.jpg" />
+        </div>
+    </div>
+    <div class="ex bg-img">
+        <div class="rect parall">
+            Hello, World
+        </div>
+    </div>
+    <div class="ex bg-img">
+        <div class="rect bord-min">
+
+        </div>
+    </div>
+    <div class="ex bg-img">
+        <div class="rect quad-ellipse">
+
+        </div>
+    </div>
+    <div class="ex bg-img">
+        <div class="rect half-ellipse">
+
+        </div>
+    </div>
+    <div class="ex bg-img">
+        <div class="rect ellipse">
+
+        </div>
+    </div>
     <div class="ex">
         <div class="rect ant-border">
 
