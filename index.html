@@ -293,10 +293,154 @@ border-right: 110px solid transparent;
             from { stroke-dasharray: 0 400}
             
         }
+        .sever-shadows {
+            box-shadow: 
+                15px 0px 20px -10px black,
+                -15px 0px 20px -10px black
+        }
+        .filter {
+            height: 200px;
+            filter: blur(4px);
+            transition-duration: 0.3s;
+            background-size: 100%;
+            
+        }
+        .filter:hover {
+            filter: none;
+            transition-duration: 1s;
+            transition-timing-function: ease-out;
+            background-size: 104%;
+            animation: filter 2s;
+        }
+        @keyframes filter {
+            from { background-size: 100% }
+            to { background-size: 104% }
+        }
+        .filter1 {
+            height: 200px;
+            filter: grayscale(100%) sepia();
+
+            /*filter: hue-rotate(300deg);*/
+            /*filter: sepia() saturate(4) hue-rotate(295deg);;*/
+            background-size: 100%;
+        }
+        .filter1:hover, focus {
+            filter: none;
+            background-size: 104%
+        }
+        /*main {
+            width: 400px;
+            background: rgba(255,0,0,.5);
+            position: relative;
+        }
+        main::before {
+            position:absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            content: '';
+            filter: blur(20px);
+            
+        }*/
+        .glass {
+            margin: 50px;
+            overflow: hidden;
+            background: hsla(0,0%,100%,.3);
+            position:relative;
+        }
+        div.ex.bg-img.spesial, .glass::before {
+            
+            position: absolute;
+            filter: blur(px);
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+        .text {
+            width: 290px;
+            text-align: justify;
+            font-size: 32px;
+            padding:10px;
+            hyphens: auto;
+        }
+        .with-wrap::after {
+            content: '\A';
+            white-space: wrap;
+        }
+        a[type=hello] {
+            color: greenyellow
+        }
+        .ball {
+            margin-top: -300px;
+            width:30px;
+            height:30px;
+            animation: 1 blink-smooth;
+            animation-timing-function: ease-in;
+        }
+        @keyframes bounce {
+            60%, 80%, to { 
+                transform: translateY(350px);
+                animation-timing-function: ease-out }
+            70% { transform: translateY(250px); }
+            90% { transform: translateY(300px); }
+        }
+        .play {
+            height: 500px;
+        }
+        @keyframes typing {
+            from { width: 0; }
+        }
+        h1 {
+            background: black;
+            font-size: 4ch;
+            width: 15ch; /* Width of text */
+            overflow: hidden;
+            white-space: nowrap;
+            
+            font-family: monospace;
+            border-right: .5em solid;
+            
+            animation: typing 1s steps(15) infinite alternate paused,caret 2s steps(1) infinite ;
+            
+        }
+        h1:hover,:focus {
+            animation-play-state: running;
+           
+
+            
+        }
+        @keyframes caret {
+           50% { border-color: transparent; }
+        }
 
     </style>
 </head>
 <body>
+    <div class="ex bg-img play">
+        <h1>Hello< World/==</h1>
+    </div>
+    <div class="ex bg-img">
+        <div class="rect text">
+            <a type="hello">The only collwayd o&shy;df doingstaff is byyour&shy;self and do nothear for anyone.</a>
+            <div class="with-wrap" style="display:inline-block">hello</div><div style="display:inline-block">hello</div>
+        </div>
+    </div>
+    
+
+
+    <div class="filter1 ex bg-img">
+
+    </div>
+    <div class="filter ex bg-img">
+
+    </div>
+    <div class="ex bg-img">
+        <div class="rect sever-shadows">
+
+        </div>
+    </div>
     <div class="ex bg-img">
         <div class="svg-pie">
             <svg width=100px height=100px>
